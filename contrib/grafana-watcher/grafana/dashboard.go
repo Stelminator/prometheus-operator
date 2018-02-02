@@ -80,7 +80,7 @@ func (c *DashboardsClient) Delete(slug string) error {
 }
 
 func (c *DashboardsClient) Create(dashboardJson io.Reader) error {
-	importDashboardUrl := makeUrl(c.BaseUrl, "/api/dashboards/import")
+	importDashboardUrl := makeUrl(c.BaseUrl, "/api/dashboards/db")
 	req, err := http.NewRequest("POST", importDashboardUrl, dashboardJson)
 	if err != nil {
 		return err
